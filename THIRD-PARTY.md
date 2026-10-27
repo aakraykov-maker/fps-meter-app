@@ -1,3 +1,3 @@
-# Сторонние компоненты
+# Third-party
 
-`PresentMon.exe` в пакете — это [Intel PresentMon](https://github.com/GameTechDev/PresentMon). Распространяется под собственной лицензией Intel, не как часть кода FPS Meter. Лицензия и исходники: https://github.com/GameTechDev/PresentMon
+`PresentMon.exe` in the zip is [Intel PresentMon](https://github.com/GameTechDev/PresentMon). It ships under Intel's own license. It is not part of the FPS Meter source. License and code: https://github.com/GameTechDev/PresentMon
