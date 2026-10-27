@@ -1,26 +1,29 @@
 # FPS Meter
 
-Небольшой оверлей поверх окон: всегда сверху, без рамки и без фокуса. Показывает FPS процесса, которому принадлежит окно на переднем плане. Нагрузка CPU и GPU — по желанию, в настройках.
+A small overlay that sits on top of the game. No frame, and it does not steal focus. It shows the FPS of the app in front, not a hard-coded list of titles.
 
-## Что умеет
+CPU and GPU load are optional. Turn them on in settings if you want them.
 
-- FPS через PresentMon (`MsBetweenPresents`) для активного окна, не по жёсткому списку игр
-- Дополнительно: кадры до экрана, весь рабочий стол или захват окна
-- Прозрачность, размер, тёмная тема, прилипание к краям
-- Клики проходят в игру, пока курсор не на виджете
-- Значок микрофона: выключить все активные микрофоны или вернуть громкость
-- Ярлыки программ: если программа уже с окном — вывести его, иначе запустить; приоритет процесса
-- Автозапуск (задача при входе в Windows, если включить в настройках)
-- Обновления сами: программа скачивает новую сборку и ставит её без ручного «Download» на сайте
+## What it does
 
-Для PresentMon нужен ETW, поэтому Windows один раз спрашивает права администратора при запуске.
+- FPS comes from PresentMon, for the process that owns the foreground window.
+- You can switch the counter: presented frames, frames that reached the display, the whole desktop, or one window.
+- Clicks go through to the game until you point at the overlay.
+- Drag it by the FPS number. Opacity, size, dark theme, snap to screen edges.
+- Language is Russian or English. If you have not picked one, it follows the Windows UI language.
+- Mic button: mute every active microphone, or put the old levels back.
+- Pin programs on the overlay. Click starts the app, or brings its window forward if it is already open. You can set process priority.
+- Autostart is a logon task, if you turn it on in settings.
+- When a newer build is on GitHub, the widget downloads it on its own.
 
-## Как установить
+Windows asks for administrator rights once. PresentMon needs ETW to read frame times.
 
-1. Скачайте `fps_meter_i.exe` со [страницы релизов](https://github.com/aakraykov-maker/fps-meter-app/releases).
-2. Запустите установщик. Он скачает пакет, проверит SHA-256, распакует файлы в локальную папку приложения и создаст ярлык.
-3. Дальше обновления приходят сами при запуске виджета.
+## Install
 
-В пакете только `FpsMeter.exe`, `PresentMon.exe`, `fps.ico` и `Start.bat`.
+1. Get `fps_meter_i.exe` from [Releases](https://github.com/aakraykov-maker/fps-meter-app/releases).
+2. Run it. It downloads the zip, checks it, unpacks the files, and puts a shortcut on the desktop.
+3. After that, updates arrive when the widget starts.
 
-PresentMon — отдельная программа Intel, см. [THIRD-PARTY](THIRD-PARTY.md).
+The zip only has `FpsMeter.exe`, `PresentMon.exe`, `fps.ico`, and `Start.bat`.
+
+PresentMon is Intel's tool, not this overlay. See [THIRD-PARTY](THIRD-PARTY.md).
